@@ -17,11 +17,15 @@ RUN composer install --no-dev --optimize-autoloader && \
     touch database/database.sqlite && \
     php artisan key:generate --force && \
     php artisan migrate:fresh --force && \
+    php artisan tinker --execute="\App\Models\User::create(['name'=>'Admin','email'=>'admin@gmail.com','password'=>bcrypt('password123')]);" && \
     php artisan config:clear && \
     php artisan cache:clear && \
+    php artisan route:clear && \
     php artisan view:clear && \
-    php artisan tinker --execute="\App\Models\User::create(['name'=>'Admin','email'=>'admin@gmail.com','password'=>bcrypt('password123')]);" && \
-    chmod -R 775 storage bootstrap/cache
+    mkdir -p storage/framework/sessions && \
+    mkdir -p storage/framework/views && \
+    mkdir -p storage/framework/cache && \
+    chmod -R 777 storage bootstrap/cache
 
 EXPOSE 10000
 
