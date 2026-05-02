@@ -22,9 +22,7 @@ RUN composer install --no-dev --optimize-autoloader && \
     php artisan cache:clear && \
     php artisan route:clear && \
     php artisan view:clear && \
-    mkdir -p storage/framework/sessions && \
-    mkdir -p storage/framework/views && \
-    mkdir -p storage/framework/cache && \
+    mkdir -p storage/framework/sessions storage/framework/views storage/framework/cache && \
     chmod -R 777 storage bootstrap/cache
 
 EXPOSE 10000
