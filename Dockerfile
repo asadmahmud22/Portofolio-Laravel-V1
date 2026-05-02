@@ -20,6 +20,7 @@ RUN composer install --no-dev --optimize-autoloader && \
     php artisan config:clear && \
     php artisan cache:clear && \
     php artisan view:clear && \
+    php artisan tinker --execute="\App\Models\User::create(['name'=>'Admin','email'=>'admin@gmail.com','password'=>bcrypt('password123')]);" && \
     chmod -R 775 storage bootstrap/cache
 
 EXPOSE 10000
