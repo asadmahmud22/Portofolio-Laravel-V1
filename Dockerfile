@@ -16,7 +16,7 @@ RUN composer install --no-dev --optimize-autoloader && \
     mkdir -p database && \
     touch database/database.sqlite && \
     php artisan key:generate --force && \
-    php artisan migrate --force && \
+    php artisan migrate:fresh --force && \
     php artisan config:clear && \
     php artisan cache:clear && \
     php artisan view:clear && \
