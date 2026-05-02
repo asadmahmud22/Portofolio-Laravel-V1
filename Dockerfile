@@ -15,10 +15,11 @@ RUN composer install --no-dev --optimize-autoloader && \
     cp .env.example .env || true && \
     mkdir -p database && \
     touch database/database.sqlite && \
-    php artisan config:clear && \
-    php artisan cache:clear && \
     php artisan key:generate --force && \
     php artisan migrate --force && \
+    php artisan config:clear && \
+    php artisan cache:clear && \
+    php artisan view:clear && \
     chmod -R 775 storage bootstrap/cache
 
 EXPOSE 10000
