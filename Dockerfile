@@ -11,9 +11,8 @@ WORKDIR /app
 
 COPY . .
 
-RUN composer install --no-dev --optimize-autoloader
-
-RUN cp .env.example .env || true && \
+RUN composer install --no-dev --optimize-autoloader && \
+    cp .env.example .env || true && \
     mkdir -p database && \
     touch database/database.sqlite && \
     php artisan config:clear && \
