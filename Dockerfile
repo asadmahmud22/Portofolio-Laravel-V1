@@ -13,6 +13,14 @@ COPY . .
 
 RUN composer install --no-dev --optimize-autoloader
 
+RUN cp .env.example .env || true
+RUN php artisan config:clear
+RUN php artisan cache:clear
+RUN php artisan key:generate --force
+RUN touch database/database.sqlite
+RUN php artisan migrate --force
+RUN chmod -R 775 storage bootstrap/cache
+
 EXPOSE 10000
 
 CMD php -S 0.0.0.0:10000 -t public
