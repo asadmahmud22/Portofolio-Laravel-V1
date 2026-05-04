@@ -20,7 +20,7 @@ RUN composer install --no-dev --optimize-autoloader && \
 
 EXPOSE 10000
 
-CMD php artisan config:clear && \
+CMD php artisan migrate:fresh --force && \
+    php artisan config:clear && \
     php artisan view:clear && \
-    php artisan cache:clear && \
     php -S 0.0.0.0:10000 -t public
