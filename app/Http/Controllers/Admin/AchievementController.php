@@ -12,7 +12,7 @@ class AchievementController extends Controller
     public function index()
     {
         $achievements = Achievement::latest()->paginate(10);
-        return view('admin.achievements.index', compact('achievements'));
+        return view('admin.Achievements.index', compact('achievements'));
     }
 
     public function create()
