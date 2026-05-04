@@ -65,7 +65,6 @@ class AchievementController extends Controller
         $data = $request->except('image');
 
         if ($request->hasFile('image')) {
-            // Hapus gambar lama jika ada
             if ($achievement->image && Storage::disk('public')->exists($achievement->image)) {
                 Storage::disk('public')->delete($achievement->image);
             }
@@ -81,7 +80,6 @@ class AchievementController extends Controller
 
     public function destroy(Achievement $achievement)
     {
-        // Hapus gambar jika ada
         if ($achievement->image && Storage::disk('public')->exists($achievement->image)) {
             Storage::disk('public')->delete($achievement->image);
         }
