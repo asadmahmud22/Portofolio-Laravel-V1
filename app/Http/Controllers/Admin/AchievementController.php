@@ -17,7 +17,7 @@ class AchievementController extends Controller
 
     public function create()
     {
-        return view('admin.achievements.create');
+        return view('admin.Achievements.create');
     }
 
     public function store(Request $request)
@@ -41,13 +41,13 @@ class AchievementController extends Controller
 
         Achievement::create($data);
 
-        return redirect()->route('admin.achievements.index')
+        return redirect()->route('admin.Achievements.index')
                          ->with('success', 'Achievement berhasil ditambahkan!');
     }
 
     public function edit(Achievement $achievement)
     {
-        return view('admin.achievements.edit', compact('achievement'));
+        return view('admin.Achievements.edit', compact('achievement'));
     }
 
     public function update(Request $request, Achievement $achievement)
@@ -75,7 +75,7 @@ class AchievementController extends Controller
 
         $achievement->update($data);
 
-        return redirect()->route('admin.achievements.index')
+        return redirect()->route('admin.Achievements.index')
                          ->with('success', 'Achievement berhasil diperbarui!');
     }
 
@@ -88,7 +88,7 @@ class AchievementController extends Controller
 
         $achievement->delete();
 
-        return redirect()->route('admin.achievements.index')
+        return redirect()->route('admin.Achievements.index')
                          ->with('success', 'Achievement berhasil dihapus!');
     }
 }
