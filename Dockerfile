@@ -20,6 +20,7 @@ EXPOSE 10000
 
 CMD php artisan migrate --force && \
     php artisan db:seed --force && \
+    php artisan storage:link && \
     php artisan config:clear && \
     php artisan view:clear && \
     php -S 0.0.0.0:10000 -t public
