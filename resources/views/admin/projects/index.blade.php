@@ -100,7 +100,7 @@
                         @if(!$project->url && !$project->github_url)
                             <span style="color:#ccc; font-size:12px;">—</span>
                         @endif
-                    <\/td>
+                    </td>
 
                     <td>
                         <div class="action-group">
