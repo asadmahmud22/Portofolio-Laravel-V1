@@ -55,7 +55,7 @@
             <tbody>
                 @forelse($projects as $project)
                 <tr>
-                    <td style="color:#bbb; font-size:12px;">{{ $loop->iteration }}<\/td>
+                    <td style="color:#bbb; font-size:12px;">{{ $loop->iteration }}</td>
 
                     <td>
                         @if($project->image)
@@ -67,7 +67,7 @@
                                 <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
                             </div>
                         @endif
-                    <\/td>
+                    </td>
 
                     <td class="td-title">{{ $project->title }}<\/td>
                     <td class="td-desc">{{ Str::limit($project->description, 50) }}<\/td>
