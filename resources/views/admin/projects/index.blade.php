@@ -69,8 +69,8 @@
                         @endif
                     </td>
 
-                    <td class="td-title">{{ $project->title }}<\/td>
-                    <td class="td-desc">{{ Str::limit($project->description, 50) }}<\/td>
+                    <td class="td-title">{{ $project->title }}</td>
+                    <td class="td-desc">{{ Str::limit($project->description, 50) }}</td>
 
                     <td>
                         @if($project->tags)
@@ -82,7 +82,7 @@
                         @else
                             <span style="color:#ccc; font-size:12px;">—</span>
                         @endif
-                    <\/td>
+                    </td>
 
                     <td class="td-link">
                         @if($project->url)
@@ -121,8 +121,8 @@
                                 </button>
                             </form>
                         </div>
-                    <\/td>
-                <\/tr>
+                    </td>
+                </tr>
                 @empty
                 <tr>
                     <td colspan="7">
